@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Remove previous version of BBEDit from /Applications
+
+if [ -d "$3/Applications/BBEdit.app" ]; then
+   rm -rf "$3/Applications/BBEdit.app"
+fi
+
+exit 0

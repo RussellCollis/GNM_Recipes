@@ -1,0 +1,27 @@
+#!/bin/sh
+## preinstall
+
+# Remove previous version of Google Chrome from /Applications
+
+if [ -d "$3/Applications/Google Chrome.app" ]; then
+	rm -rf "$3/Applications/Google Chrome.app"
+fi
+
+if [ -f /Library/LaunchDaemons/com.google.keystone.agent.plist ]; then
+	rm /Library/LaunchDaemons/com.google.keystone.agent.plist
+fi
+
+for USERFOLDER in "home" "localhome"
+do
+	if [ -d /Users/$USERFOLDER/Library/Google/GoogleSoftwareUpdate/ ]; then
+		rm -R /Users/$USERFOLDER/Library/Google/GoogleSoftwareUpdate/
+	fi
+	
+	if [ -f /Users/$USERFOLDER/Library/LaunchAgents/com.google.keystone.agent.plist ]; then
+		rm /Users/$USERFOLDER/Library/LaunchAgents/com.google.keystone.agent.plist
+	fi
+	
+done	
+
+
+exit 0

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+#Create files if they dont exist for localhome and home
+
+for USERFOLDER in "home" "localhome"
+do
+	if [ -d /Users/$USERFOLDER/Library/Application\ Support/Firefox/Profiles/internetuser.default ]
+	then
+		echo "Profile exists"
+	else
+		mkdir -p /Users/$USERFOLDER/Library/Application\ Support/Firefox/Profiles/internetuser.default
+	fi
+
+	if [ -f /Users/$USERFOLDER/Library/Application\ Support/Firefox/profiles.ini ]
+	then
+		echo "Profile.ini exists"
+	else
+	
+		mkdir -p /Users/$USERFOLDER/Library/Application\ Support/Firefox/
+		echo "[Profile0]
+Name=internetuser.default
+IsRelative=1
+Path=Profiles/internetuser.default
+
+[General]
+StartWithLastProfile=1
+Version=2
+
+[Install2656FF1E876E9973]
+Default=Profiles/internetuser.default
+Locked=1
+" > /Users/$USERFOLDER/Library/Application\ Support/Firefox/profiles.ini
+		chmod -R a+rwx /Users/$USERFOLDER/Library/Application\ Support/Firefox/
+	fi
+done
+
+exit 0

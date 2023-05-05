@@ -1,0 +1,11 @@
+#!/bin/bash
+## script to install TeamViewer silently
+
+
+# echo "/Applications" > /tmp/tvPath
+DIR=$(dirname "$0")
+
+touch /tmp/silentInstaller
+touch /tmp/tvonlystartservice
+
+# /usr/sbin/installer -pkg "$DIR/InstallTeamViewer.pkg" -target /

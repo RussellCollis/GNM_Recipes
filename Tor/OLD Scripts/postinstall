@@ -1,0 +1,10 @@
+#!/bin/bash
+## PostInstall
+
+#No Update
+
+# rm -f /Applications/TorBrowser.app/Contents/Resources/defaults/pref/channel-prefs.js
+
+sed -i 's/release/GNM/g' /Applications/TorBrowser.app/Contents/Resources/defaults/pref/channel-prefs.js
+
+exit 0

@@ -1,0 +1,65 @@
+#!/bin/sh
+
+: <<'ABOUT_THIS_SCRIPT'
+-----------------------------------------------------------------------
+	Russell Collis / Chris Jarvis
+	Professional Services Engineer
+	Jigsaw24
+	
+	Originally posted: March 7 2022
+	Purpose: Checks the installed of Chrome and then compares with 
+	the packaged version.
+	Will update only if install package is a newer version than whats 
+	currently installed
+-----------------------------------------------------------------------
+ABOUT_THIS_SCRIPT
+
+InstalledVersion=$(defaults read "/Applications/Google Chrome.app/Contents/Info.plist" CFBundleShortVersionString)
+PackagedVersion=$(defaults read "/private/tmp/Google Chrome.app/Contents/Info.plist" CFBundleShortVersionString)
+
+# Is Chrome in Tmp
+if [[ ! -f "/private/tmp/Google\ Chrome.app /Applications/" ]]; then
+	echo "Chrome failed unpack / not in temp"
+	exit 1
+
+
+# Is Chrome Installed
+if [[ ! -f "/Applications/Google Chrome.app/Contents/Info.plist" ]]; then
+	echo "Chrome isn't installed - Installing packaged version"
+	mv -fv /private/tmp/Google\ Chrome.app /Applications/
+	exit 0
+
+elif [[ "$InstalledVersion" > "$PackagedVersion" ]] || [[ "$InstalledVersion" == "$PackagedVersion" ]]; then
+	echo "Newer Version or Same Installed - Exiting No Changes made"
+	exit 0
+
+	# Kill Chrome if running during install
+	if ps ax | grep -v grep | grep "Google Chrome" >/dev/null; then
+		pkill "Google Chrome"
+	fi
+
+else
+	rm -R /Applications/Google\ Chrome.app/
+	sleep 10
+	#ditto -c /private/tmp/Google\ Chrome.app /Applications/
+	mv -fv /private/tmp/Google\ Chrome.app /Applications/
+	echo "Install Complete"
+fi
+
+#for USERFOLDER in "home" "localhome"
+#do
+#if [ -d /Users/$USERFOLDER/Library/Google/GoogleSoftwareUpdate/ ]; then
+#	rm -R /Users/$USERFOLDER/Library/Google/GoogleSoftwareUpdate/
+#fi
+#
+#if [ -f /Users/$USERFOLDER/Library/LaunchAgents/com.google.keystone.agent.plist ]; then
+#	rm /Users/$USERFOLDER/Library/LaunchAgents/com.google.keystone.agent.plist
+#fi
+#
+#if [ -f /Library/LaunchDaemons/com.google.keystone.agent.plist ]; then
+#	rm /Library/LaunchDaemons/com.google.keystone.agent.plist
+#fi
+
+#rm -R /private/tmp/Google\ Chrome.app
+
+exit 0

@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# Check if a machine is a Laptop or Desktop. 
+mType=$(system_profiler SPHardwareDataType | grep "Model Identifier" | grep -c "Book") # 1 for laptop, 0 for desktop
+
+# Remove previous version of Tor Browser from /Applications
+
+if [ -d "$3/Applications/Tor\ Browser.app" ]; then
+   rm -rf "$3/Applications/Tor\ Browser.app"
+fi
+
+if [ -d "$3/Applications/TorBrowser.app" ]; then
+	rm -rf "$3/Applications/TorBrowser.app"
+fi
+
+#Create files if they dont exist for localhome and home
+
+# Set the known folders to populate
+if [ $mType == 0 ]; then 
+	USERFOLDERLIST="localhome
+home"
+else
+	USERFOLDERLIST="localhome"
+	ADDITIONALUSERS=$(mdfind -onlyin /Users -name "Application Support" | grep -v "Containers" | awk -F / '{print $3}')
+	
+	for ADDITONALFOLDER in $ADDITIONALUSERS; do
+		isAlreadyinList=$(echo "$USERFOLDERLIST"| grep "$ADDITONALFOLDER")
+		if [  -z "$isAlreadyinList" ]; then
+			USERFOLDERLIST="$USERFOLDERLIST
+$ADDITONALFOLDER"	
+		fi
+	done
+	
+fi
+
+# Loop through all home folders
+for USERFOLDER in $USERFOLDERLIST; do
+	
+	if [ -f /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini ]
+	then
+		echo "Profiles.ini exists"
+	else
+	
+		mkdir -p /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/
+		cat << EOF > /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini
+[Profile0]
+Name=internetuser.default
+[General]
+StartWithLastProfile=1
+
+[Profile0]
+Name=default
+IsRelative=1
+Path=user.default
+Default=1
+
+EOF
+	fi
+		
+# Set permissions for file once written
+chown $USERFOLDER /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini
+chmod 700 /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini
+# chmod -R a+rwx /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini
+	
+done
+
+exit 0

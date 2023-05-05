@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Log Path
+LOG_PATH="/Library/Logs/Signalinstall.log"
+
+# Set "CurrentUser" to current logged-in user
+CurrentUser="$(stat -f %Su /dev/console)"
+echo "$CurrentUser" >> "$LOG_PATH"
+
+# Location of the App
+app_path="/Applications/User Apps/Signal.app"
+echo "$app_path" >> "$LOG_PATH"
+
+# Set ownership of Signal.app to current user
+/usr/sbin/chown -R $CurrentUser "$app_path"

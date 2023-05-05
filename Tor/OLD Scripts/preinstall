@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Remove previous version of Tor Browser from /Applications
+
+if [ -d "$3/Applications/Tor\ Browser.app" ]; then
+   rm -rf "$3/Applications/Tor\ Browser.app"
+fi
+
+if [ -d "$3/Applications/TorBrowser.app" ]; then
+	rm -rf "$3/Applications/TorBrowser.app"
+fi
+
+#Create files if they dont exist for localhome and home
+
+/Users/home/Library/Application Support/
+
+for USERFOLDER in "home" "localhome"
+do
+	if [ -d /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini ]
+	then
+		echo "Profile exists"
+	else
+		mkdir -p /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini
+	fi
+
+	if [ -f /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini ]
+	then
+		echo "Profile.ini exists"
+	else
+	
+		mkdir -p /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/
+		echo "[Profile0]
+Name=internetuser.default
+[General]
+StartWithLastProfile=1
+
+[Profile0]
+Name=default
+IsRelative=1
+Path=user.default
+Default=1
+
+" > /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/Browser/profiles.ini
+		chmod -R a+rwx /Users/$USERFOLDER/Library/Application\ Support/TorBrowser-Data/
+	fi
+done
+
+exit 0

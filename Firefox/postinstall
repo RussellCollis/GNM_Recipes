@@ -1,0 +1,39 @@
+#!/bin/bash
+
+: <<'ABOUT_THIS_SCRIPT'
+-----------------------------------------------------------------------
+	Russell Collis 
+	Professional Services Engineer
+	Jigsaw24
+	
+Purpose: Checks the installed of Firefox and then compares with 
+the packaged version.
+Will update only if install package is a newer version than whats 
+currently installed
+-----------------------------------------------------------------------
+ABOUT_THIS_SCRIPT
+
+
+InstalledVersion=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' '/Applications/Firefox.app/Contents/Info.plist')
+PackagedVersion=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' '/private/tmp/Firefox.app/Contents/Info.plist')
+
+#echo "Installed $InstalledVersion"
+#echo "Package $PackagedVersion"
+
+if [ $PackagedVersion \< $InstalledVersion ];
+then
+	echo "Package Version is newer - proceeding"
+	# Kill Firefox if running during install
+	if ps ax | grep -v grep | grep "Firefox" >/dev/null; then
+		pkill "Firefox"
+	fi
+	rm -R /Applications/Firefox.app/
+	sleep 2
+	ditto /private/tmp/Firefox.app /Applications/Firefox.app/
+	
+	echo "Install Complete"
+else
+	echo "Installed version is newer exiting";
+fi;
+
+exit 0

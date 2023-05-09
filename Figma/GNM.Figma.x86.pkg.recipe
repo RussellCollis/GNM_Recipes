@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Figma and makes a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.Figma</string>
+	<string>uk.co.guardian.pkg.GNM_Figma_x86</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

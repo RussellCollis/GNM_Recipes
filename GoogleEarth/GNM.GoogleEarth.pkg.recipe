@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest Google Earth disk image and makes a pkg.</string>
     <key>Identifier</key>
-    <string>uk.co.guardian.pkg.GNM.Google-Earth</string>
+    <string>uk.co.guardian.pkg.GNM_Google_Earth</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

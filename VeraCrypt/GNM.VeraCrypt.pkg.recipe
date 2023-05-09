@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of VeraCrypt and creates a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.VeraCrypt</string>
+	<string>uk.co.guardian.pkg.GNM_VeraCrypt</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>

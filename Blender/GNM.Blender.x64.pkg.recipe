@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Blender and builds a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.Blender.x64</string>
+	<string>uk.co.guardian.pkg.GNM_Blender.x64</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

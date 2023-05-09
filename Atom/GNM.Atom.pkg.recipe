@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Atom and makes a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.Atom</string>
+	<string>uk.co.guardian.pkg.GNM_Atom</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

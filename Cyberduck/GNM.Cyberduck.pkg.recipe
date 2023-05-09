@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest Cyberduck disk image and builds a package.</string>
     <key>Identifier</key>
-    <string>uk.co.guardian.pkg.GNM.Cyberduck</string>
+    <string>uk.co.guardian.pkg.GNM_Cyberduck</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

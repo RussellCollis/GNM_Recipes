@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest Tor Browser disk image and builds a package. The installer package includes a preinstall script that will check for an existing TorBrowser.app in /Applications and remove it if found. It will also create internetuser.default profile files for the localhome and home user folders. Use https://www.mozilla.org/en-US/firefox/102.0/system-requirements/#mac to confirm the requirements</string>
     <key>Identifier</key>
-    <string>uk.co.guardian.pkg.GNM.TorBrowser</string>
+    <string>uk.co.guardian.pkg.GNM_Tor_Browser</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

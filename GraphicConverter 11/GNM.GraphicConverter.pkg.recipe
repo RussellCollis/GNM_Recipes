@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of GraphicConverter 11 and creates a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.GraphicConverter11</string>
+	<string>uk.co.guardian.pkg.GNM_Graphic_Converter_11</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

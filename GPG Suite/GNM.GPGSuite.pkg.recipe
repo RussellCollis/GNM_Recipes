@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of GPG Suite using and creates a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.GPGSuite</string>
+	<string>uk.co.guardian.pkg.GNM_GPG_Suite</string>
 	<key>Input</key>
 	<dict>
 	</dict>

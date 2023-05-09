@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>Package recipe for Keka</string>
         <key>Identifier</key>
-        <string>uk.co.guardian.pkg.GNM.Keka</string>
+        <string>uk.co.guardian.pkg.GNM_Keka</string>
         <key>Input</key>
         <dict>
             <key>NAME</key>

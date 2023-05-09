@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.GoogleDrive</string>
+	<string>uk.co.guardian.pkg.GNM_Google_Drive</string>
 	<key>Description</key>
 	<string>Downloads the latest version of Google Drive and creates a package.</string>
 	<key>Input</key>

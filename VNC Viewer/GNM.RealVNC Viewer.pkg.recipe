@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.VNCViewer</string>
+	<string>uk.co.guardian.pkg.GNM_VNCViewer</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

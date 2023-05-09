@@ -5,7 +5,7 @@
         <key>Description</key>
         <string>TeamViewer recipe to download latest TeamViewer</string>
         <key>Identifier</key>
-        <string>uk.co.guardian.pkg.GNM.TeamViewer</string>
+        <string>uk.co.guardian.pkg.GNM_TeamViewer</string>
 		<key>Input</key>
 		<dict>
 			<key>NAME</key>

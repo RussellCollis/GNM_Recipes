@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of QGIS and creates a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.QGIS</string>
+	<string>uk.co.guardian.pkg.GNM_QGIS</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

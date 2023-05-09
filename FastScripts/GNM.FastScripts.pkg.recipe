@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of FastScripts and creates a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.FastScripts</string>
+	<string>uk.co.guardian.pkg.GNM_FastScripts</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

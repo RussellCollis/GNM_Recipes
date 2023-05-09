@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Extract the flat package from the macFUSE dmg.</string>
     <key>Identifier</key>
-    <string>uk.co.guardian.pkg.GNM.macFUSE</string>
+    <string>uk.co.guardian.pkg.GNM_macFUSE</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

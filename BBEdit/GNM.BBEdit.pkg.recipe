@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest BBEdit and creates a package.</string>
     <key>Identifier</key>
-    <string>uk.co.guardian.pkg.GNM.BBEdit</string>
+    <string>uk.co.guardian.pkg.GNM_BBEdit</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

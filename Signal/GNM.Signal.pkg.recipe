@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Signal and creates a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.Signal</string>
+	<string>uk.co.guardian.pkg.GNM_Signal</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

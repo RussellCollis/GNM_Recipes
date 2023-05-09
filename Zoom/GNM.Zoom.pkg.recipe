@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Zoom and builds a package.</string>
 	<key>Identifier</key>
-	<string>uk.co.guardian.pkg.GNM.Zoom</string>
+	<string>uk.co.guardian.pkg.GNM_Zoom</string>
 	<key>Input</key>
 	<dict>
 		<key>BUNDLE_ID</key>

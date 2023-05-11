@@ -4,7 +4,7 @@
 <dict>
     <key>Description</key>
     <string>Downloads the current release version of Cyberduck.
-
+https://docs.cyberduck.io/cyberduck/faq/#system-requirements
 Alternate URLs that can be used for SPARKLE_FEED_URL:
 - beta: https://version.cyberduck.io/beta/changelog.rss
 - nightly: https://version.cyberduck.io/nightly/changelog.rss

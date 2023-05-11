@@ -59,7 +59,7 @@
                 <key>pkg_request</key>
                 <dict>
                     <key>pkgname</key>
-                    <string>GNM.%NAME%.%version%.autopkg.OS10.13plus</string>
+                    <string>GNM.%NAME%.%version%.autopkg.OS10.12plus</string>
                     <key>version</key>
                     <string>%version%</string>
                     <key>id</key>

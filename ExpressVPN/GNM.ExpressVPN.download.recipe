@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest version of the ExpressVPN.</string>
     <key>Identifier</key>
-    <string>com.github.dataJAR-recipes.download.ExpressVPN</string>
+    <string>uk.co.guardian.download.ExpressVPN</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

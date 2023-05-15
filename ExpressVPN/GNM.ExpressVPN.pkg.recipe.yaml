@@ -1,13 +1,11 @@
 Description: Downloads the current version of ExpressVPN as a package.
 Identifier: com.github.moofit-recipes.pkg.ExpressVPN
 ParentRecipe: com.github.moofit-recipes.download.ExpressVPN
-MinimumVersion: "2.3"
+MinimumVersion: 2.2999999999999998
 Input:
   NAME: ExpressVPN
   DOWNLOAD_URL: https://www.expressvpn.com/clients/latest/mac
   USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-
-
 Process:
   - Processor: FlatPkgUnpacker
     Arguments:
@@ -23,5 +21,5 @@ Process:
       plist_version_key: CFBundleShortVersionString
   - Processor: PkgCopier
     Arguments:
-      pkg_path: "%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg"
+      pkg_path: "%RECIPE_CACHE_DIR%/GNM_%NAME%-%version%.pkg"
       source_pkg: "%pathname%"

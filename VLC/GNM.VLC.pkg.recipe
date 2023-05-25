@@ -72,11 +72,11 @@
                 <key>pkg_request</key>
                 <dict>
                     <key>pkgname</key>
-                    <string>GNM.%NAME%.%version%.autopkg.OS10.13plus</string>
+                    <string>GNM.%NAME%.%version%.autopkg.OS10.7.5plus</string>
                     <key>pkgdir</key>
                     <string>%RECIPE_CACHE_DIR%</string>
                     <key>id</key>
-                    <string>uk.co.guardian.pkg.%NAME%.%version%.autopkg.os10.13plus</string>                    
+                    <string>uk.co.guardian.pkg.%NAME%.%version%.autopkg.os10.7.5plus</string>
                     <key>resources</key>
                     <string>Resources</string>
                     <key>options</key>
